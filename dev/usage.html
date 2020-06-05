@@ -234,7 +234,7 @@
 interdimensional portals. You want to distribute sample data so that your users can
 easily try out the library by copying and pasting from the docs. You want to have a
 <code class="docutils literal notranslate"><span class="pre">plumbus.datasets</span></code> module that defines functions like <code class="docutils literal notranslate"><span class="pre">fetch_c137()</span></code> that will
-return the data loaded as a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v1.0.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a> for convenient access.</p>
+return the data loaded as a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v1.0.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a> for convenient access.</p>
 </div>
 <div class="section" id="assumptions">
 <h2>Assumptions<a class="headerlink" href="#assumptions" title="Permalink to this headline">¶</a></h2>
@@ -760,6 +760,21 @@ prefixed with <code class="docutils literal notranslate"><span class="pre">alg:<
 cronen.csv md5:b53c08d3570b82665784cedde591a8b0
 </pre></div>
 </div>
+<p>From version 1.2 the registry file can also contain line comments, prepended with a <code class="docutils literal notranslate"><span class="pre">#</span></code>, e.g.:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># C-137 sample data
+c137.csv 19uheidhlkjdwhoiwuhc0uhcwljchw9ochwochw89dcgw9dcgwc
+# Cronenberg sample data
+cronen.csv 1upodh2ioduhw9celdjhlfvhksgdwikdgcowjhcwoduchowjg8w
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Make sure you set the pooch version in your <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> to version 1.2 or
+later when using comments as earlier versions cannot handle them:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">install_requires</span> <span class="pre">=</span> <span class="pre">[...,</span> <span class="pre">&quot;pooch&gt;=1.2&quot;,</span> <span class="pre">...]</span></code></p>
+</div></blockquote>
+</div>
 <p>To make sure the registry file is shipped with your package, include the following in
 your <code class="docutils literal notranslate"><span class="pre">MANIFEST.in</span></code> file:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>include plumbus/registry.txt
@@ -931,7 +946,7 @@ using them</strong> to set the <code class="docutils literal notranslate"><span 
     <p>
         &copy; Copyright 2018-2020, The Pooch Developers
       <span class="lastupdated">
-        Last updated on May 14, 2020.
+        Last updated on Jun 05, 2020.
       </span>
 
     </p>
